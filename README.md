@@ -8,6 +8,12 @@
 - 小程序确实便捷，集成一些工具进去确实有用
 - 我有几个和教师相关的微信公众号，正好可以关联起来
 
+## 开发说明
+
+此小程序直接使用微信小程序原生开发，未使用其他框架，可直接将此代码下载修改`project.config.json`里面的相关信息，以便成为你自己的内容。
+
+开发参考：[微信小程序框架](https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html)、[微信小程序组件](https://developers.weixin.qq.com/miniprogram/dev/component/)、[微信小程序 API](https://developers.weixin.qq.com/miniprogram/dev/api/)
+
 ## 更新日志
 
 ### v0.1.4
