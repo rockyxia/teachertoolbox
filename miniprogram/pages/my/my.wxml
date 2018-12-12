@@ -1,0 +1,43 @@
+<!-- my.wxml -->
+<view class="container">
+  
+  <!-- 用户 信息 -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view
+      bindgetuserinfo="onGetUserInfo">
+      <view class='username'>{{userInfo.nickName}}</view>
+      <view class='intro'>{{genderName}}{{address}}</view>
+    </view>
+  </view>
+
+  <!-- 微信公众号推荐 -->
+  <view class='page-title'>有用的微信公众号推荐</view>
+  <view class='recommend'>
+
+    <view class='recommend-item' wx:for="{{recommendArray}}" wx:for-index="idx" wx:for-item="recommend">
+      <image class='userinfo-avatar' src="{{recommend.faceUrl}}" mode='widthFix'></image>
+      <view class='content'>
+        <view class='username'>{{recommend.name}}<text>({{recommend.enname}})</text></view>
+        <view class='intro'>{{recommend.intro}}</view>
+      </view>
+      <view class='btnbox'>
+        <button size="mini" type="primary" data-name="{{recommend.name}}" data-ewm="{{recommend.ewmUrl}}" bindtap="showEwm">去关注</button>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- <modal title="{{modalTitle}}" hidden="{{modalHidden}}" no-cancel="{{nocancel}}" confirm-text="关闭"  bindconfirm="modalConfirm">
+    <view>
+      <image style='width:100%;' src="{{modalEwm}}" mode='widthFix'></image>
+    </view>
+    <view style='text-align: center;'>扫描二维码关注</view>
+  </modal> -->
+
+</view>

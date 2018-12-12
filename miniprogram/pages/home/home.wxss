@@ -1,0 +1,36 @@
+/* home.wxss */
+.main {
+  flex: 1;
+  width: 100%;
+  background: #FBF9FE;
+}
+
+.page-title {
+  font-size: 40rpx;
+  padding: 20rpx;
+}
+
+.tools-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tools-item {
+  padding: 20rpx 0;
+  width: 25%;
+  font-size: 25rpx;
+  text-align: center;
+}
+.tools-item .text {
+  padding-top: 10rpx;
+}
+
+.navigator-hover {
+  color: #42B983;
+}
+
+.contactbox {
+  padding: 20rpx;
+  background: #FBF9FE;
+}

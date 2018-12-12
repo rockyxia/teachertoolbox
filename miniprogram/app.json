@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/my/my",
+    "pages/phoneNumber/phoneNumber",
+    "pages/rmbCapital/rmbCapital",
+    "pages/scanCode/scanCode",
+    "pages/nopage/nopage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#42b983",
+    "navigationBarTitleText": "教师工具箱",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#FBF9FE"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#42B983",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "/images/icon-home.png",
+        "selectedIconPath": "/images/icon-home-h.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "/images/icon-my.png",
+        "selectedIconPath": "/images/icon-my-h.png"
+      }
+    ]
+  }
+}

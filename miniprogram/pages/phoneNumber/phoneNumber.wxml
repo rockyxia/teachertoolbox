@@ -1,0 +1,296 @@
+<!--pages/phoneNumber/phoneNumber.wxml-->
+<view class="container">
+  <view class='main'>
+    <view class='innerbox'>
+      <view class='page-h1'>常用电话查询</view>
+      <view class='contentp'>
+        点击号码可直接拨打电话
+      </view>
+
+      <view class='contentp'>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">公众服务电话号码、常用电话、紧急电话</view>
+          </view>
+          
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="119">119</view>
+            <view class="td">火警电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="110">110</view>
+            <view class="td">报警服务台</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="120">120</view>
+            <view class="td">急救电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="122">122</view>
+            <view class="td">道路交通事故报警台</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="12110">12110</view>
+            <view class="td">公安短信报警号码</view>
+            <view class="td num" bindtap="callPhone" data-phone="114">114</view>
+            <view class="td">查号台</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num">11185</view>
+            <view class="td">邮政客户服务电话</view>
+            <view class="td num">12348</view>
+            <view class="td">全国法律服务热线</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="12395">12395</view>
+            <view class="td">水上遇险求救电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="12121">12121</view>
+            <view class="td">气象服务电话</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="12117">12117</view>
+            <view class="td">报时服务电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="999">999</view>
+            <view class="td">红十字会急救台</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95119">95119</view>
+            <view class="td">森林火警电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="112">112</view>
+            <view class="td">紧急呼叫中心</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="12306">12306</view>
+            <view class="td">全国铁路客服中心</view>
+            <view class="td num"> </view>
+            <view class="td"> </view>
+          </view>
+
+        </view>
+      </view>
+
+      <view class='contentp'>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">全国国家机构监督、投诉、抢修、举报电话</view>
+          </view>
+          
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="12333">12333</view>
+            <view class="td">民工维权热线电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="12320">12320</view>
+            <view class="td">公共卫生环境投诉</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95598">95598</view>
+            <view class="td">电力系统客服电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="12315">12315</view>
+            <view class="td">消费者投诉举报专线电话</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="12365">12365</view>
+            <view class="td">质量监督电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="12369">12369</view>
+            <view class="td">环保局监督电话</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="12345">12345</view>
+            <view class="td">政府公益服务接入网</view>
+            <view class="td num" bindtap="callPhone" data-phone="12318">12318</view>
+            <view class="td">文化市场统一举报电话</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="12358">12358</view>
+            <view class="td">价格监督举报电话</view>
+            <view class="td num" bindtap="callPhone" data-phone="12310">12310</view>
+            <view class="td">机构编制违规举报热线</view>
+          </view>
+
+        </view>
+      </view>
+
+      <view class='contentp'>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">全国通信机构服务电话号码</view>
+          </view>
+          
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="10000">10000</view>
+            <view class="td">中国电信客户服务热线</view>
+            <view class="td num" bindtap="callPhone" data-phone="10086">10086</view>
+            <view class="td">中国移动客服热线</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="17911">17911</view>
+            <view class="td">中国联通IP号码</view>
+            <view class="td num" bindtap="callPhone" data-phone="116114">116114</view>
+            <view class="td">中国联通的“电话导航”业务</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="10050">10050</view>
+            <view class="td">铁通客户服务</view>
+            <view class="td num" bindtap="callPhone" data-phone="10010">10010</view>
+            <view class="td">中国联通客服热线</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="17900">17900</view>
+            <view class="td">中国电信IP电话卡</view>
+            <view class="td num" bindtap="callPhone" data-phone="17951">17951</view>
+            <view class="td">中国移动IP号码</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="118114">118114</view>
+            <view class="td">中国电信号码百事通</view>
+            <view class="td num" bindtap="callPhone" data-phone="10086999">10086999</view>
+            <view class="td">中国垃圾短信投诉号码</view>
+          </view>
+
+        </view>
+      </view>
+
+      <view class='contentp'>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">全国银行客户服务电话号码</view>
+          </view>
+
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95555">95555</view>
+            <view class="td">招商银行</view>
+            <view class="td num" bindtap="callPhone" data-phone="95599">95599</view>
+            <view class="td">农业银行</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95566">95566</view>
+            <view class="td">中国银行</view>
+            <view class="td num" bindtap="callPhone" data-phone="95568">95568</view>
+            <view class="td">民生银行</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95533">95533</view>
+            <view class="td">建设银行</view>
+            <view class="td num" bindtap="callPhone" data-phone="95595">95595</view>
+            <view class="td">光大银行</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95588">95588</view>
+            <view class="td">工商银行</view>
+            <view class="td num" bindtap="callPhone" data-phone="95559">95559</view>
+            <view class="td">交通银行</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95558">95558</view>
+            <view class="td">中信银行</view>
+            <view class="td num" bindtap="callPhone" data-phone="95508">95508</view>
+            <view class="td">广发银行</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95528">95528</view>
+            <view class="td">浦发银行</view>
+            <view class="td num" bindtap="callPhone" data-phone="95577">95577</view>
+            <view class="td">华夏银行</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95501">95501</view>
+            <view class="td">深发银行</view>
+            <view class="td num" bindtap="callPhone" data-phone="95561">95561</view>
+            <view class="td">兴业银行</view>
+          </view>
+
+        </view>
+      </view>
+
+      <view class='contentp'>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">快递公司客服电话</view>
+          </view>
+
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95543">95543</view>
+            <view class="td">申通快递</view>
+            <view class="td num" bindtap="callPhone" data-phone="95338">95338</view>
+            <view class="td">顺丰速运</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95546">95546</view>
+            <view class="td">韵达快递</view>
+            <view class="td num" bindtap="callPhone" data-phone="95554">95554</view>
+            <view class="td">圆通快递</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95311">95311</view>
+            <view class="td">中通快递</view>
+            <view class="td num" bindtap="callPhone" data-phone="95353">95353</view>
+            <view class="td">德邦物流</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="4009565656">4009565656</view>
+            <view class="td">百世汇通</view>
+            <view class="td num" bindtap="callPhone" data-phone="11185">11185</view>
+            <view class="td">邮政特快专递</view>
+          </view>
+
+        </view>
+      </view>
+
+      <view class='contentp'>
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">保险客服电话</view>
+          </view>
+               
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95500">95500</view>
+            <view class="td">太平洋保险</view>
+            <view class="td num" bindtap="callPhone" data-phone="95510">95510</view>
+            <view class="td">阳光保险</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95511">95511</view>
+            <view class="td">平安保险</view>
+            <view class="td num" bindtap="callPhone" data-phone="95512">95512</view>
+            <view class="td">平安产险</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95515">95515</view>
+            <view class="td">合众人寿保险</view>
+            <view class="td num" bindtap="callPhone" data-phone="95518">95518</view>
+            <view class="td">中国人民保险</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95519">95519</view>
+            <view class="td">中国人寿保险</view>
+            <view class="td num" bindtap="callPhone" data-phone="95512">95512</view>
+            <view class="td">泰康人寿保险</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95522">95522</view>
+            <view class="td">合众人寿保险</view>
+            <view class="td num" bindtap="callPhone" data-phone="95535">95535</view>
+            <view class="td">生命人寿保险</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95567">95567</view>
+            <view class="td">新华人寿保险</view>
+            <view class="td num" bindtap="callPhone" data-phone="95585">95585</view>
+            <view class="td">中华保险</view>
+          </view>
+          <view class="tr">
+            <view class="td num" bindtap="callPhone" data-phone="95589">95589</view>
+            <view class="td">太平保险</view>
+            <view class="td num" bindtap="callPhone" data-phone="95590">95590</view>
+            <view class="td">大地保险</view>
+          </view>
+          <view class="tr bg-g">
+            <view class="td num" bindtap="callPhone" data-phone="95596">95596</view>
+            <view class="td">民生人寿保险</view>
+            <view class="td num"> </view>
+            <view class="td"> </view>
+          </view>
+          	　
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <import src ="../template/temp_footer.wxml"/>
+  <template is="tempFooter"/>
+</view>

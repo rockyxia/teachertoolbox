@@ -1,0 +1,16 @@
+<!-- home.wxml -->
+
+<view class='container'>
+  <view class='main'>
+    <view class='page-title'>常用工具</view>
+    <view class='tools-list'>
+      <navigator wx:for="{{navigatorArray}}"  wx:for-index="idx" wx:for-item="navigator" class='tools-item' url="{{navigator.url}}" open-type="navigate" hover-class="navigator-hover">
+        <image style='width:40%;' src="{{navigator.src}}" mode='widthFix'></image>
+        <view class='text'>{{navigator.text}}</view>
+      </navigator>
+    </view>
+  </view>
+  <view class='contactbox'>
+    <button type='primary' open-type="contact" bindcontact="handleContact">联系小编提需求</button>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/scanCode/scanCode.wxml-->
+<view class="container">
+  <view class='main'>
+    <view class='innerbox'>
+      <view class='page-h1'>二维码扫描识别</view>
+      <view class='contentp'>二维码内容直接识别成字符显示，不跳转。</view>
+      
+      <button type="primary" bindtap="scanCode">扫描或选择图片</button>
+
+      <view wx:if="{{showResult}}" class='show-result'><text>扫描结果为：</text>{{codeResult}}</view>
+      <button wx:if="{{showResult}}" type="primary" bindtap="copyResult">复制结果</button>
+
+    </view>
+  </view>
+  <import src ="../template/temp_footer.wxml"/>
+  <template is="tempFooter"/>
+</view>

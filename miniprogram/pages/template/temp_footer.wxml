@@ -1,0 +1,17 @@
+<!--temp_footer.wxml-->
+<template name="tempFooter">
+  <view class='footer'>
+    <view class='footer-item'>
+      <navigator class='footer-nav' url="/pages/home/home" open-type="switchTab" hover-class="navigator-hover">
+        <image style='width:50rpx;' src="../../images/icon-home-h.png" mode='widthFix'></image>
+        <view class='text'>返回首页</view>
+      </navigator>
+    </view>
+    <view class='footer-item'>
+      <button class='footer-nav' open-type="share">
+        <image style='width:50rpx;' src="../../images/icon-share-h.png" mode='widthFix'></image>
+        <view class='text'>分享出去</view>
+      </button >
+    </view>
+  </view>
+</template>

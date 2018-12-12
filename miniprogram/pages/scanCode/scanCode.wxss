@@ -1,0 +1,31 @@
+/* pages/scanCode/scanCode.wxss */
+page {
+  background: #FBF9FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-h1 {
+  font-size: 40rpx;
+  padding: 10rpx 0;
+}
+
+.contentp {
+  font-size: 25rpx;
+  line-height: 1.8;
+  margin-bottom: 20rpx;
+  color: #666;
+}
+
+.show-result {
+  margin: 20rpx 0;
+  padding: 20rpx;
+  background: #fff;
+  border: 1px solid #dedede;
+  box-shadow: 1px 1px 1px #eee;
+  word-break: break-all; 
+}
+.show-result text {
+  color: #42B983;
+}

@@ -1,0 +1,25 @@
+<!--pages/rmbCapital/rmbCapital.wxml-->
+<view class='container'>
+  <view class='main'>
+    <view class='innerbox'>
+      <view class='page-h1'>人民币大写转换</view>
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class='section'><input name="amount" placeholder="请填写金额" type="digit" focus /></view>
+        <view class='btn-area'>
+          <button size="mini" type="primary" form-type="submit">转换</button>
+          <button size="mini" type="warn" form-type="reset">清空</button>
+        </view>
+      </form>
+      
+      <view wx:if="{{showAmount}}" class='show-ampount'>{{amountResult}}</view>
+
+      <view class='page-h2'>工具简介</view>
+      <view class='contentp'>通过本工具可以实现人民币大写转换，人民币金额用到的中文大写汉字：零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿。</view>
+      <view class='page-h2'>相关知识</view>
+      <view class='contentp'>大写金额数字的使用始于明朝。朱元璋因为当时的一件重大贪污案“郭桓案”而发布法令，其中明确要求记账的数字必须由“一、二、三、四、五、六、七、八、九、十、百、千”改为“壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰（陌）、仟（阡）”等复杂的汉字，用以增加涂改帐册的难度。后来“陌”和“阡”被改写成“佰、仟”，并一直使用至今。</view>
+      <view class='contentp'>人类最早用来计数的工具是手指和脚趾，但它们只能表示20以内的数字。当数目很多时，大多数的原始人就用小石子和豆粒来记数。渐渐地人们不满足粒为单位的记数，又发明了打绳结、刻画记数的方法，在兽皮、兽骨、树木、石头上刻画记数。中国古代是用木、竹或骨头制成的小棍来记数，称为算筹。这些记数方法和记数符号慢慢转变成了最早的数字符号（数码）。如今，世界各国都使用阿拉伯数字为标准数字。</view>
+    </view>
+  </view>
+  <import src ="../template/temp_footer.wxml"/>
+  <template is="tempFooter"/>
+</view>
