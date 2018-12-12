@@ -14,7 +14,7 @@ Page({
         text: '常用电话'
       },
       {
-        url: '/pages/nopage/nopage',
+        url: '/pages/qrCode/qrCode',
         src: './icon-ewmsc.png',
         text: '二维码生成'
       },

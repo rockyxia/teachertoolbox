@@ -1,0 +1,52 @@
+<!--pages/qrCode/qrCode.wxml-->
+<view class="container">
+  <view class='main'>
+    <view class='innerbox'>
+      <view class='page-h1'>二维码生成</view>
+      <view class='contentp'>输入文字或链接生成二维码。</view>
+
+      <view class='qrcodebox' bindtap="showEwm">
+        <image style='width: {{size}}px; height: {{size}}px;' src="{{qrcode}}" class="qrcode"></image>
+        <view style="position:fixed;top:999999999999999999999rpx;">
+        <canvas style='width: {{size}}px; height: {{size}}px;' canvas-id='canvas'></canvas>
+        </view>
+      </view>
+
+      <form bindsubmit="formSubmit">
+        <view class='section'><input name="text" placeholder="请输入文字或链接" type="text" value='{{text}}'/></view>
+        <view class='section'>
+          <button type="primary" form-type="submit">生成图片</button>
+        </view>
+
+        <view class='section'>
+          <view class='parambox'>
+            <view class='label'>二维码宽度</view>
+            <slider name="size" value="{{size}}" min="100" max="375" show-value></slider>
+          </view>
+        </view>
+
+        <view class='section'>
+          <view class='parambox'>
+            <view class='label'>二维码颜色</view>
+             <picker bindchange="bindBeforePickerChange" range-key="name" value="{{beforeindex}}" range="{{selectArray}}">
+                <view class="picker"> 当前选择：{{selectArray[beforeindex].name}} </view>
+              </picker>
+          </view>
+        </view>
+
+        <view class='section'>
+          <view class='parambox'>
+            <view class='label'>背景颜色</view>
+             <picker bindchange="bindAfterPickerChange" range-key="name" value="{{afterindex}}" range="{{selectArray}}">
+                <view class="picker"> 当前选择：{{selectArray[afterindex].name}} </view>
+              </picker>
+          </view>
+        </view>
+      </form>
+
+    </view>
+  </view>
+  <import src ="../template/temp_footer.wxml"/>
+  <template is="tempFooter"/>
+</view>
+

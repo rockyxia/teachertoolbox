@@ -5,6 +5,7 @@
     "pages/phoneNumber/phoneNumber",
     "pages/rmbCapital/rmbCapital",
     "pages/scanCode/scanCode",
+    "pages/qrCode/qrCode",
     "pages/nopage/nopage"
   ],
   "window": {

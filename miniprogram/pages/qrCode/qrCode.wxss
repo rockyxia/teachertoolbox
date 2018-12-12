@@ -1,0 +1,55 @@
+/* pages/qrCode/qrCode.wxss */
+page {
+  background: #FBF9FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-h1 {
+  font-size: 40rpx;
+  padding: 10rpx 0;
+}
+
+.contentp {
+  font-size: 25rpx;
+  line-height: 1.8;
+  margin-bottom: 20rpx;
+  color: #666;
+}
+
+.qrcodebox, .parambox {
+  border-radius: 5rpx;
+  padding: 5rpx;
+  border: 1px solid #dedede;
+  background: #fff;
+}
+.qrcodebox {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 20rpx;
+}
+.parambox {
+  padding: 10rpx 0;
+}
+.parambox .label {
+  padding-left: 20rpx;
+  font-size: 25rpx;
+  color: #666;
+}
+.parambox .picker {
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.section {
+  padding: 10rpx 0;
+}
+.section input {
+  padding: 20rpx;
+  background: #fff;
+  border: 1px solid #dedede;
+  font-size: 25rpx;
+  border-radius: 5rpx;
+}
