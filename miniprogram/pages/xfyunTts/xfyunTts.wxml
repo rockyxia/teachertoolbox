@@ -1,0 +1,19 @@
+<!--pages/xfyunTts/xfyunTts.wxml-->
+<view class="container">
+  <view class='main'>
+    <view class='innerbox'>
+      <view class='page-h1'>文字转语音</view>
+      <view class='contentp'>输入文字合成语音。本服务由讯飞云提供。</view>
+
+      <form bindsubmit="formSubmit">
+        <view class='section'><textarea disabled placeholder="请输入需要合成的文字" name="textarea" value='{{text}}' /></view>
+
+        <view class='section buttons'>
+          <button type="primary" size="mini" bindtap="formReset">清空</button>
+          <button type="primary" size="mini" bindtap="pasteContent">粘贴</button>
+          <button type="primary" size="mini" form-type="submit">合成语音</button>
+        </view>
+      </form>
+    </view>
+  </view>
+</view>

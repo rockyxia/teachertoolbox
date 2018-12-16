@@ -91,12 +91,23 @@ Page({
     })
   },
 
+  bindSizeChange(e) {
+    let that = this
+    that.setData({
+      size: e.detail.value
+    })
+
+    that.createQRCode()
+  },
+
   bindBeforePickerChange(e) {
     let that = this
     that.setData({
       beforeindex: e.detail.value,
       beforecolor: that.getColor(e.detail.value)
     })
+
+    that.createQRCode()
   },
 
   bindAfterPickerChange(e) {
@@ -105,6 +116,8 @@ Page({
       afterindex: e.detail.value,
       aftercolor: that.getColor(e.detail.value)
     })
+
+    that.createQRCode()
   },
 
   // 获取对应数组下标的值

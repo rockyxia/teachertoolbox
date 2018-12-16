@@ -6,6 +6,7 @@
     "pages/rmbCapital/rmbCapital",
     "pages/scanCode/scanCode",
     "pages/qrCode/qrCode",
+    "pages/xfyunTts/xfyunTts",
     "pages/nopage/nopage"
   ],
   "window": {

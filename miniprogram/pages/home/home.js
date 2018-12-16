@@ -29,7 +29,7 @@ Page({
         text: '图转文字'
       },
       {
-        url: '/pages/nopage/nopage',
+        url: '/pages/xfyunTts/xfyunTts',
         src: './icon-tts.png',
         text: '文字转语音'
       },

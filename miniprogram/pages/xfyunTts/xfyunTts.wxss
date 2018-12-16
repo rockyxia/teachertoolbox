@@ -1,4 +1,4 @@
-/* pages/qrCode/qrCode.wxss */
+/* pages/xfyunTts/xfyunTts.wxss */
 page {
   background: #FBF9FE;
   display: flex;
@@ -18,39 +18,24 @@ page {
   color: #666;
 }
 
-.qrcodebox, .parambox {
-  border-radius: 5rpx;
-  padding: 5rpx;
-  border: 1px solid #dedede;
-  background: #fff;
-}
-.qrcodebox {
+.buttons {
   display: flex;
   justify-content: center;
-
-  margin-bottom: 10rpx;
-  margin-top: 10rpx;
 }
-.parambox {
-  padding: 10rpx 0;
-}
-.parambox .label {
-  padding-left: 20rpx;
-  font-size: 25rpx;
-  color: #666;
-}
-.parambox .picker {
-  text-align: center;
-  font-size: 30rpx;
+.buttons button {
+  width: 100%;
+  margin: 0 10rpx;
 }
 
 .section {
   padding: 10rpx 0;
 }
-.section input {
+.section textarea {
   padding: 20rpx;
   background: #fff;
   border: 1px solid #dedede;
   font-size: 25rpx;
   border-radius: 5rpx;
+  width: 100%;
+  box-sizing: border-box;
 }
