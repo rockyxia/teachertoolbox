@@ -2,6 +2,8 @@
 const cusBase64 = require('../../utils/base64.js')
 const MD5 = require('../../utils/md5.js')
 
+let innerAudioContext = wx.createInnerAudioContext()
+
 Page({
 
   /**
@@ -9,20 +11,22 @@ Page({
    */
   data: {
     text: '欢迎来到教师工具箱，快试试语音合成功能吧。',
+    isplay: false
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    // this.xfyun()
   },
 
   // 合成语音开始
   formSubmit(e) {
     let that = this
     that.setData({
-      text: e.detail.value.textarea
+      text: e.detail.value.textarea,
+      isplay: true
     })
 
     wx.showToast({
@@ -49,6 +53,20 @@ Page({
           console.log('用户点击取消')
         }
       }
+    })
+  },
+
+  // 播放
+  playAudio() {
+    innerAudioContext.play()
+  },
+
+  // 复制链接
+  copyLink() {
+    wx.showToast({
+      title: '功能开发中...',
+      icon: 'none',
+      duration: 1000
     })
   },
 
@@ -86,19 +104,12 @@ Page({
       },
       curTime = parseInt(new Date().getTime() / 1000),
       xparam = cusBase64.CusBASE64.encoder(JSON.stringify(param)),
-      checksum = MD5.hexMD5(apikey + curTime + xparam),
-      header = '',
-      content = '';
-
-    // console.log(param);
-    // console.log(xparam);
-    // console.log(checksum);
-    // console.log(curTime);
-    // console.log(that.data.text);
+      checksum = MD5.hexMD5(apikey + curTime + xparam);
     
     wx.request({
       url: url,
       method: 'POST',
+      responseType: 'arraybuffer',
       data: {
         text: that.data.text,
       },
@@ -113,22 +124,30 @@ Page({
       success(res) {
         console.log(res)
         if (res.header['Content-Type'] == 'audio/mpeg') {
-          let manager = wx.getFileSystemManager()
           // debugger
-          let savedFilePath = wx.env.USER_DATA_PATH + '/jsgjx/tts.mp3'
-          manager.writeFile({
-            filePath: savedFilePath,
-            data: res.data,
 
-            encoding: 'binary',
+          const fs = wx.getFileSystemManager()
+          let _filePath = wx.env.USER_DATA_PATH + '/tts.audio.mp3'
 
-            sucess: function (res) {
-              console.log("writeFilesucess res:", res)
-            },
-            fail: function (err) {
-              console.log("writeFile fail err:", err)
-            }
+          fs.writeFileSync(_filePath, res.data, 'utf8')
+          // if (innerAudioContext) {
+            innerAudioContext.destroy()
+          // }
+
+          innerAudioContext = wx.createInnerAudioContext()
+
+          innerAudioContext.src = _filePath
+
+          innerAudioContext.autoplay = true
+          innerAudioContext.play()
+          innerAudioContext.onPlay(() => {
+            console.log('开始播放')
           })
+          innerAudioContext.onError((res) => {
+            console.log(res.errMsg)
+            console.log(res.errCode)
+          })
+          
         }
       }
     })

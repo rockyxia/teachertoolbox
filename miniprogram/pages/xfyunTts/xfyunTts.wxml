@@ -6,14 +6,20 @@
       <view class='contentp'>输入文字合成语音。本服务由讯飞云提供。</view>
 
       <form bindsubmit="formSubmit">
-        <view class='section'><textarea disabled placeholder="请输入需要合成的文字" name="textarea" value='{{text}}' /></view>
+        <view class='section'><textarea placeholder="请输入需要合成的文字" name="textarea" value='{{text}}' /></view>
 
         <view class='section buttons'>
           <button type="primary" size="mini" bindtap="formReset">清空</button>
           <button type="primary" size="mini" bindtap="pasteContent">粘贴</button>
           <button type="primary" size="mini" form-type="submit">合成语音</button>
         </view>
+        <view class='section buttons' wx:if="{{isplay}}">
+          <button type="primary" size="mini" bindtap="playAudio">播放</button>
+          <button type="primary" size="mini" bindtap="copyLink">复制链接</button>
+        </view>
       </form>
     </view>
   </view>
+  <import src ="../template/temp_footer.wxml"/>
+  <template is="tempFooter"/>
 </view>
