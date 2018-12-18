@@ -11,7 +11,10 @@ Page({
    */
   data: {
     text: '欢迎来到教师工具箱，快试试语音合成功能吧。',
-    isplay: false
+    isplay: false,
+    speed: '50',
+    volume: '50',
+    pitch: '50'
   },
 
   /**
@@ -23,9 +26,21 @@ Page({
 
   // 合成语音开始
   formSubmit(e) {
-    let that = this
+    let that = this,
+      _text = e.detail.value.textarea
+    if (_text == '') {
+      wx.showToast({
+        title: '请输入需要合成的文字',
+        icon: 'none',
+        duration: 1000
+      })
+      return false
+    }
     that.setData({
-      text: e.detail.value.textarea,
+      text: _text,
+      speed: e.detail.value.speed + '',
+      volume: e.detail.value.volume + '',
+      pitch: e.detail.value.pitch + '',
       isplay: true
     })
 
@@ -59,6 +74,14 @@ Page({
   // 播放
   playAudio() {
     innerAudioContext.play()
+  },
+  // 暂停
+  pauseAudio() {
+    innerAudioContext.pause()
+  },
+  // 停止
+  stopAudio() {
+    innerAudioContext.stop()
   },
 
   // 复制链接
@@ -100,7 +123,10 @@ Page({
       param = {
         'auf': 'audio/L16;rate=8000',
         'aue': 'lame',
-        'voice_name': 'xiaoyan'
+        'voice_name': 'xiaoyan',
+        'speed': that.data.speed,
+        'volume': that.data.volume,
+        'pitch': that.data.pitch
       },
       curTime = parseInt(new Date().getTime() / 1000),
       xparam = cusBase64.CusBASE64.encoder(JSON.stringify(param)),

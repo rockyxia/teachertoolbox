@@ -18,10 +18,23 @@
 
 开发参考：[微信小程序框架](https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html)、[微信小程序组件](https://developers.weixin.qq.com/miniprogram/dev/component/)、[微信小程序 API](https://developers.weixin.qq.com/miniprogram/dev/api/)
 
+## 功能列表
+
+> 1. 人民币转大写
+> 2. 常用电话
+> 3. 二维码生成
+> 4. 二维码识别
+> 5. 文字转语音
+
 ## 更新日志
+
+### v0.1.6
+
+> - [add]增加二维码生成、文字转语音两个新工具
+> - [update]优化首页图标大小不一致情况
 
 ### v0.1.4
 
-> - 增加人民币转大写、常用电话、二维码识别三个工具
-> - 增加客服、分享功能
-> - 增加我的微信公众号推荐功能
+> - [add]增加人民币转大写、常用电话、二维码识别三个工具
+> - [add]增加客服、分享功能
+> - [add]增加我的微信公众号推荐功能

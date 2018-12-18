@@ -40,3 +40,18 @@ page {
   width: 100%;
   box-sizing: border-box;
 }
+
+.parambox {
+  border-radius: 5rpx;
+  padding: 5rpx;
+  border: 1px solid #dedede;
+  background: #fff;
+}
+.parambox {
+  padding: 10rpx 0;
+}
+.parambox .label {
+  padding-left: 20rpx;
+  font-size: 25rpx;
+  color: #666;
+}
