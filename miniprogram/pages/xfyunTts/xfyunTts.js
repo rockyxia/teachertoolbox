@@ -1,7 +1,4 @@
 // pages/xfyunTts/xfyunTts.js
-const cusBase64 = require('../../utils/base64.js')
-const MD5 = require('../../utils/md5.js')
-
 let innerAudioContext = wx.createInnerAudioContext()
 
 Page({
@@ -131,32 +128,29 @@ Page({
       },
       success(res) {
         console.log(res)
-        // if (res.header['Content-Type'] == 'audio/mpeg') {
-          // debugger
 
-          const fs = wx.getFileSystemManager()
-          let _filePath = wx.env.USER_DATA_PATH + '/tts.audio.mp3'
+        const fs = wx.getFileSystemManager()
+        let _filePath = wx.env.USER_DATA_PATH + '/tts.audio.mp3'
 
-          fs.writeFileSync(_filePath, res.data, 'utf8')
-          // if (innerAudioContext) {
-            innerAudioContext.destroy()
-          // }
-
-          innerAudioContext = wx.createInnerAudioContext()
-
-          innerAudioContext.src = _filePath
-
-          innerAudioContext.autoplay = true
-          innerAudioContext.play()
-          innerAudioContext.onPlay(() => {
-            console.log('开始播放')
-          })
-          innerAudioContext.onError((res) => {
-            console.log(res.errMsg)
-            console.log(res.errCode)
-          })
-          
+        fs.writeFileSync(_filePath, res.data, 'utf8')
+        // if (innerAudioContext) {
+          innerAudioContext.destroy()
         // }
+
+        innerAudioContext = wx.createInnerAudioContext()
+
+        innerAudioContext.src = _filePath
+
+        innerAudioContext.autoplay = true
+        innerAudioContext.play()
+        innerAudioContext.onPlay(() => {
+          console.log('开始播放')
+        })
+        innerAudioContext.onError((res) => {
+          console.log(res.errMsg)
+          console.log(res.errCode)
+        })
+          
       }
     })
   },

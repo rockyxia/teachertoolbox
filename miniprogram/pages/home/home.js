@@ -44,7 +44,7 @@ Page({
         text: '公历农历转换'
       },
       {
-        url: '/pages/nopage/nopage',
+        url: '/pages/phoneQuery/phoneQuery',
         src: './icon-phone.png',
         text: '手机号归属'
       },

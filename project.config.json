@@ -1,4 +1,5 @@
 {
+  "version": "0.1.7",
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {

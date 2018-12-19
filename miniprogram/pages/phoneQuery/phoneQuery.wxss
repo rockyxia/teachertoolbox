@@ -1,5 +1,4 @@
-/* pages/rmbCapital/rmbCapital.wxss */
-
+/* pages/phoneQuery/phoneQuery.wxss */
 page {
   background: #FBF9FE;
   display: flex;
@@ -11,6 +10,18 @@ page {
   font-size: 40rpx;
   padding: 10rpx 0;
 }
+.page-h2 {
+  font-size: 30rpx;
+  padding: 30rpx 0 10rpx;
+}
+
+.contentp {
+  font-size: 25rpx;
+  line-height: 1.8;
+  margin-bottom: 20rpx;
+  color: #666;
+}
+
 .section {
   padding: 10rpx 0;
 }
@@ -35,16 +46,4 @@ page {
   border: #dedede 1px solid;
   border-radius: 5rpx;
   font-size: 30rpx;
-}
-
-.page-h2 {
-  font-size: 30rpx;
-  padding: 30rpx 0 10rpx;
-}
-
-.contentp {
-  font-size: 25rpx;
-  line-height: 1.8;
-  margin-bottom: 20rpx;
-  color: #666;
 }
