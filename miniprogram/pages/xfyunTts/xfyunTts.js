@@ -117,39 +117,21 @@ Page({
   // 讯飞云服务
   xfyun() {
     let that = this,
-      url = 'https://api.xfyun.cn/v1/service/v1/tts',
-      appid = '5c1625f7',
-      apikey = '54e555f8d96ffd1ad20fa6d4fb143bf8',
-      param = {
-        'auf': 'audio/L16;rate=8000',
-        'aue': 'lame',
-        'voice_name': 'xiaoyan',
-        'speed': that.data.speed,
-        'volume': that.data.volume,
-        'pitch': that.data.pitch
-      },
-      curTime = parseInt(new Date().getTime() / 1000),
-      xparam = cusBase64.CusBASE64.encoder(JSON.stringify(param)),
-      checksum = MD5.hexMD5(apikey + curTime + xparam);
+      url = 'https://dev.rockyxia.com/api_xfyn_tts.php';
     
     wx.request({
       url: url,
       method: 'POST',
       responseType: 'arraybuffer',
       data: {
-        text: that.data.text,
-      },
-      header: {
-        'X-Appid': appid,
-        'X-CurTime': curTime,
-        'X-Param': xparam,
-        'X-CheckSum': checksum,
-        'X-Real-Ip': '127.0.0.1',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+        'text': that.data.text,
+        'speed': that.data.speed,
+        'volume': that.data.volume,
+        'pitch': that.data.pitch
       },
       success(res) {
         console.log(res)
-        if (res.header['Content-Type'] == 'audio/mpeg') {
+        // if (res.header['Content-Type'] == 'audio/mpeg') {
           // debugger
 
           const fs = wx.getFileSystemManager()
@@ -174,7 +156,7 @@ Page({
             console.log(res.errCode)
           })
           
-        }
+        // }
       }
     })
   },
