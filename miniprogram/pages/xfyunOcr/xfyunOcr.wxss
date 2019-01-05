@@ -1,0 +1,50 @@
+/* pages/xfyunOcr/xfyunOcr.wxss */
+page {
+  background: #FBF9FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-h1 {
+  font-size: 40rpx;
+  padding: 10rpx 0;
+}
+
+.contentp {
+  font-size: 25rpx;
+  line-height: 1.8;
+  margin-bottom: 20rpx;
+  color: #666;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+}
+.col2-1 {
+  padding: 20rpx 0;
+  width: 50%;
+  font-size: 35rpx;
+  text-align: center;
+}
+.col2-1 text {
+  display: block;
+}
+
+.scrollView {
+  background: #fff;
+  border: 1px solid #dedede;
+  font-size: 25rpx;
+  height: 600rpx;
+  margin-top: 25rpx;
+}
+.scrollView view {
+  margin: 5px;
+  line-height: 20rpx;
+}
+.scrollView view text {
+  display: inline-block;
+  margin-right: 5rpx;
+}

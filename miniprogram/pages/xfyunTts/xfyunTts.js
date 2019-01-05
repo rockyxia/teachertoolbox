@@ -114,7 +114,7 @@ Page({
   // 讯飞云服务
   xfyun() {
     let that = this,
-      url = 'https://dev.rockyxia.com/api_xfyn_tts.php';
+      url = 'https://dev.rockyxia.com/api_xfyun_tts.php';
     
     wx.request({
       url: url,

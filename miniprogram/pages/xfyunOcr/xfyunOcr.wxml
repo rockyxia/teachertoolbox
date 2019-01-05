@@ -1,0 +1,40 @@
+<!--pages/xfyunOcr/xfyunOcr.wxml-->
+<view class="container">
+  <view class='main'>
+    <view class='innerbox'>
+      <view class='page-h1'>图片转文字</view>
+      <view class='contentp'>这也许是最好用的图片转文字工具，识别准确率达99%。本服务由讯飞云提供。</view>
+      <view class='contentp'>从下面相册选择图片或相机拍摄图片直接识别图片中的文字：</view>
+
+      <view class='row'>
+        <view class='col2-1' bindtap='clickAlbum'>
+          <image style='width:40%;' src="./icon-album.png" mode='widthFix'></image>
+          <text>相册</text>
+        </view>
+        <view class='col2-1' bindtap='clickCamera'>
+          <image style='width:40%;' src="./icon-camera.png" mode='widthFix'></image>
+          <text>相机</text>
+        </view>
+      </view>
+
+      <view wx:if="{{isShow}}">
+        <view><button type="primary" bindtap="copyText">复制文本</button></view>
+
+        <scroll-view
+          scroll-y
+          scroll-x
+          class="scrollView"
+        >
+          <view wx:for="{{jsonHtml}}"  wx:for-index="idx" wx:for-item="view">
+            <text wx:for="{{view}}"  wx:for-index="idxs" wx:for-item="text">
+              {{text.word}}
+            </text>
+          </view>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+  <import src ="../template/temp_footer.wxml"/>
+  <template is="tempFooter"/>
+</view>

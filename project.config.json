@@ -1,5 +1,5 @@
 {
-  "version": "0.1.7",
+	"version": "0.1.7",
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
@@ -12,6 +12,7 @@
 	"appid": "wx7e25a93a60db64c7",
 	"projectname": "teachertoolbox",
 	"libVersion": "2.4.1",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -29,12 +30,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ocr",
+					"pathName": "pages/xfyunOcr/xfyunOcr"
 				}
 			]
 		}

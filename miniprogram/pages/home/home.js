@@ -24,7 +24,7 @@ Page({
         text: '二维码识别'
       },
       {
-        url: '/pages/nopage/nopage',
+        url: '/pages/xfyunOcr/xfyunOcr',
         src: './icon-ocr.png',
         text: '图转文字'
       },
