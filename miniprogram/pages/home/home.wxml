@@ -13,4 +13,5 @@
   <view class='contactbox'>
     <button type='primary' open-type="contact" bindcontact="handleContact">联系小编提需求</button>
   </view>
+  <ad unit-id="adunit-0eccc7ba40a8d19a"></ad>
 </view>
