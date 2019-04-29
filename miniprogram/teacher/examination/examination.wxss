@@ -1,0 +1,126 @@
+/* teacher/examination/examination.wxss */
+
+page {
+  height: 100%;
+}
+
+.exam-warp {
+  height: 100%;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.exam-topics {
+  flex-grow:1;
+  overflow:auto;
+  height: 100%;
+}
+
+.exam-footer {
+  padding: 10px 10px 30px;
+  border-top: 1px solid #EEEEEE;
+
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+.exam-footer button {
+  width: 40%;
+}
+.exam-footer .iconfont {
+  font-size: 20px;
+}
+
+.exam-swiper {
+  height: 100%;
+}
+
+.exam-item {
+}
+
+.exam-item-header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ececec;
+  line-height: 30px;
+  padding: 10px 15px;
+
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+
+.exam-item-header text {
+  vertical-align: middle;
+}
+
+.exam-item-header .type {
+}
+
+.exam-item-header .num {
+  color: #aaa;
+}
+
+.exam-item-header .num .current {
+  color: #333;
+  font-size: 25px;
+}
+
+.exam-item-title {
+  line-height: 30px;
+  padding: 10px 15px 0;
+}
+
+.exam-item-options {
+  padding: 10px 0;
+}
+
+.exam-item-options .option {
+  padding: 10px 15px;
+  line-height: 50px;
+
+  display: flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.exam-item-options .name {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #EEEEEE;
+}
+.exam-item-checkbox .exam-item-options .name {
+  border-radius: 2px;
+}
+
+.exam-item-options .content {
+  padding-left: 10px;
+  flex:1;
+  line-height: 25px;
+}
+
+.exam-item-options .active {
+  background-color: #FEFBEA;
+}
+.exam-item-options .active .name {
+  background-color: #FBD753;
+}
+.exam-item-options .success {
+  background-color: #F1FCF6;
+}
+.exam-item-options .success .name {
+  background-color: #84E7A6;
+  color: #fff;
+}
+.exam-item-options .error {
+  background-color: #FCF2F1;
+}
+.exam-item-options .error .name {
+  background-color: #E68362;
+  color: #fff;
+}

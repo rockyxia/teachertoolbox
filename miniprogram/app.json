@@ -1,5 +1,7 @@
 {
   "pages": [
+    "teacher/practice/practice",
+    "teacher/examination/examination",
     "pages/home/home",
     "pages/my/my",
     "pages/phoneNumber/phoneNumber",
@@ -15,7 +17,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#42b983",
     "navigationBarTitleText": "教师工具箱",
-    "navigationBarTextStyle": "#fff",
+    "navigationBarTextStyle": "white",
     "backgroundColor": "#FBF9FE"
   },
   "tabBar": {
@@ -24,10 +26,16 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "text": "首页",
+        "text": "每日一练",
+        "pagePath": "teacher/practice/practice",
+        "iconPath": "/images/icon-practice.png",
+        "selectedIconPath": "/images/icon-practice-h.png"
+      },
+      {
+        "text": "工具箱",
         "pagePath": "pages/home/home",
-        "iconPath": "/images/icon-home.png",
-        "selectedIconPath": "/images/icon-home-h.png"
+        "iconPath": "/images/icon-tool.png",
+        "selectedIconPath": "/images/icon-tool-h.png"
       },
       {
         "text": "我的",
@@ -36,5 +44,6 @@
         "selectedIconPath": "/images/icon-my-h.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

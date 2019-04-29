@@ -11,7 +11,7 @@
         </view>
       </form>
       
-      <view wx:if="{{showAmount}}" class='show-ampount'>{{amountResult}}</view>
+      <view wx:if="{{showAmount}}" class='show-result'>{{amountResult}}</view>
 
       <view class='page-h2'>工具简介</view>
       <view class='contentp'>通过本工具可以实现人民币大写转换，人民币金额用到的中文大写汉字：零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿。</view>

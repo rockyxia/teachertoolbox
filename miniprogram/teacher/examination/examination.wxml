@@ -1,0 +1,66 @@
+<!--teacher/examination/examination.wxml-->
+<view class='exam-warp'>
+  <!-- 题目区 -->
+  <view class='exam-topics'>
+    <swiper class='exam-swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <scroll-view scroll-y style="height: 100%;">
+            <view class='exam-item exam-item-checkbox'>
+              <view class='exam-item-header'>
+                <view class='type'>
+                  <text>单项选择题</text>
+                </view>
+                <view class='num'>
+                  <text class='current'>1</text>
+                  <text> / 15</text>
+                </view>
+              </view>
+              <view class='exam-item-title'>教师职业道德区业道德区业道德区业道德区业道德区业道德区别于其他职业道德的显著标志是教师职业道德区别于其他职业道德的显著标志是教师职业道德区别于其他职业道德的显著标志是()</view>
+              <view class='exam-item-options'>
+                <view class='option'>
+                  <text class='name'>A</text>
+                  <text class='content'>爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业</text>
+                </view>
+                <view class='option active'>
+                  <text class='name'>B</text>
+                  <text class='content'>团结爱岗敬业道德区业道德区业爱岗敬业协作</text>
+                </view>
+                <view class='option success'>
+                  <text class='name'>C</text>
+                  <text class='content'>清正廉爱岗业道德区业道德区业道德区业道德区敬业爱岗敬业洁</text>
+                </view>
+                <view class='option error'>
+                  <text class='name'>D</text>
+                  <text class='content'>为人师表</text>
+                </view>
+                <view class='option'>
+                  <text class='name'>A</text>
+                  <text class='content'>爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业</text>
+                </view>
+                <view class='option active'>
+                  <text class='name'>B</text>
+                  <text class='content'>团结爱岗敬业道德区业道德区业爱岗敬业协作</text>
+                </view>
+                <view class='option success'>
+                  <text class='name'>C</text>
+                  <text class='content'>清正廉爱岗业道德区业道德区业道德区业道德区敬业爱岗敬业洁</text>
+                </view>
+                <view class='option error'>
+                  <text class='name'>D</text>
+                  <text class='content'>为人师表</text>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 答题卡入口 -->
+  <view class='exam-footer'>
+    <button>答题卡</button>
+    <button type="primary">交 卷</button>
+  </view>
+</view>
