@@ -2,27 +2,31 @@
 <view class='exam-warp'>
   <!-- 题目区 -->
   <view class='exam-topics'>
-    <swiper class='exam-swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}">
-      <block wx:for="{{imgUrls}}">
+    <swiper class='exam-swiper' bindchange="getCurrentSwiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}">
+      <block wx:for="{{testArray}}" wx:for-index="idx" wx:for-item="test">
         <swiper-item>
           <scroll-view scroll-y style="height: 100%;">
-            <view class='exam-item exam-item-checkbox'>
+            <view class='exam-item {{test.type == 1 ? "" : "exam-item-checkbox"}}'>
               <view class='exam-item-header'>
                 <view class='type'>
-                  <text>单项选择题</text>
+                  <text wx:if="{{test.type == 1}}">单项选择题</text>
+                  <text wx:elif="{{test.type == 2}}">多项选择题</text>
+                  <text wx:else>出错了</text>
                 </view>
                 <view class='num'>
-                  <text class='current'>1</text>
-                  <text> / 15</text>
+                  <text class='current'>{{idx+1}}</text>
+                  <text> / 5</text>
                 </view>
               </view>
-              <view class='exam-item-title'>教师职业道德区业道德区业道德区业道德区业道德区业道德区别于其他职业道德的显著标志是教师职业道德区别于其他职业道德的显著标志是教师职业道德区别于其他职业道德的显著标志是()</view>
+              <view class='exam-item-title'>{{test.title}}</view>
               <view class='exam-item-options'>
-                <view class='option'>
-                  <text class='name'>A</text>
-                  <text class='content'>爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业爱岗敬业</text>
-                </view>
-                <view class='option active'>
+                <block wx:for="{{test.options}}" wx:for-item="option">
+                  <view class='option {{option.selected ? "active" : ""}}' data-value="{{option.name}}" data-type="{{test.type}}" bindtap='operateOption'>
+                    <text class='name'>{{option.name}}</text>
+                    <text class='content'>{{option.value}}</text>
+                  </view>
+                </block>
+                <!-- <view class='option active'>
                   <text class='name'>B</text>
                   <text class='content'>团结爱岗敬业道德区业道德区业爱岗敬业协作</text>
                 </view>
@@ -49,7 +53,16 @@
                 <view class='option error'>
                   <text class='name'>D</text>
                   <text class='content'>为人师表</text>
-                </view>
+                </view> -->
+              </view>
+              <view class='exam-item-answer' wx:if="{{test.showAnswer}}">
+                <view class='answer'>正确答案：<text>{{test.answer}}</text></view>
+                <view class='hd'>解析</view>
+                <view class='bd'><rich-text nodes="{{test.analysis}}"></rich-text></view>
+                <view class='hd'>考点</view>
+                <view class='bd'><text class='testcenter'>{{test.testcenter}}</text></view>
+                <view class='hd'>来源</view>
+                <view class='bd'>{{test.source}}</view>
               </view>
             </view>
           </scroll-view>
@@ -60,7 +73,7 @@
 
   <!-- 答题卡入口 -->
   <view class='exam-footer'>
-    <button>答题卡</button>
-    <button type="primary">交 卷</button>
+    <button type="primary" bindtap='checkAnswer'>查看答案</button>
+    <button bindtap='hideAnswer'>隐藏答案</button>
   </view>
 </view>

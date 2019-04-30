@@ -1,10 +1,10 @@
 <!--teacher/practice/practice.wxml-->
 <view class='practice-header'>
   <!-- 科目 -->
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="{{'name'}}">
     <view class='practice-subject'>
       <view>
-        <text>{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}</text>
+        <text>{{multiArray[0][multiIndex[0]].name}}-{{multiArray[1][multiIndex[1]].name}}</text>
       </view>
       <view>
         <text>切换科目</text>
@@ -29,7 +29,7 @@
   </view>
   <!-- 今日练习 -->
   <view class='practice-btns'>
-    <button type='primary'>2019-04-28 进入练习</button>
+    <button type='primary' bindtap='gotoExamination' data-date="{{todayString}}">{{todayString}} 进入练习</button>
   </view>
   <!-- 波浪 -->
   <view class='waveWrapper waveAnimation'>
@@ -51,6 +51,28 @@
     <text class="iconfont icon-down"></text>
   </view>
   <view class='bd'>
+    <navigator wx:for="{{oldDays}}" url="/teacher/examination/examination?date={{item}}&categroyId={{categroyId}}">
+      <view class='item'>
+        <view class='tltle'>
+          <text>{{item}} 每日一练</text>
+        </view>
+        <view class='link'>
+          <text>立即补练</text>
+          <text class="iconfont icon-right"></text>
+        </view>
+      </view>
+    </navigator>
+    <!-- <navigator url="/teacher/examination/examination?date=2019-04-26">
+      <view class='item'>
+        <view class='tltle'>
+          <text>2019-04-27 每日一练</text>
+        </view>
+        <view class='link'>
+          <text class='practiced'>立即补练</text>
+          <text class="iconfont icon-right"></text>
+        </view>
+      </view>
+    </navigator>
     <navigator url="/teacher/examination/examination">
       <view class='item'>
         <view class='tltle'>
@@ -68,32 +90,10 @@
           <text>2019-04-27 每日一练</text>
         </view>
         <view class='link'>
-          <text class='practiced'>已练习</text>
-          <text class="iconfont icon-right"></text>
-        </view>
-      </view>
-    </navigator>
-    <navigator url="/teacher/examination/examination">
-      <view class='item'>
-        <view class='tltle'>
-          <text>2019-04-27 每日一练</text>
-        </view>
-        <view class='link'>
           <text>立即补练</text>
           <text class="iconfont icon-right"></text>
         </view>
       </view>
-    </navigator>
-    <navigator url="/teacher/examination/examination">
-      <view class='item'>
-        <view class='tltle'>
-          <text>2019-04-27 每日一练</text>
-        </view>
-        <view class='link'>
-          <text>立即补练</text>
-          <text class="iconfont icon-right"></text>
-        </view>
-      </view>
-    </navigator>
+    </navigator> -->
   </view>
 </view>

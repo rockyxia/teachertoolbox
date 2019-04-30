@@ -10,6 +10,16 @@ Page({
     categroyArray: [],
     multiArray: [[], []],
     multiIndex: [2, 0],
+    categroyId: null,
+    todayString: null,
+    oldDays: null
+  },
+
+  //获取当前时间
+  getCurrentMonthFirst(date) {
+    var date = date;
+    var todate = date.getFullYear() + "-" + ((date.getMonth() + 1) < 10 ? ("0" + (date.getMonth() + 1)) : date.getMonth() + 1) + "-" + (date.getDate() < 10 ? ("0" + date.getDate()) : date.getDate());
+    return todate;
   },
 
   bindMultiPickerChange(e) {
@@ -41,34 +51,63 @@ Page({
         data.multiIndex[1] = 0
         break
     }
-    console.log(data.multiIndex)
+    data.categroyId = data.multiArray[1][data.multiIndex[1]].id
+    console.log(data.categroyId)
     this.setData(data)
+  },
+
+  /**
+   * 日期显示处理
+   */
+  dateShow(){
+    let date = new Date()
+    this.setData({
+      todayString: this.getCurrentMonthFirst(date),
+      oldDays: [
+        this.getCurrentMonthFirst(new Date(date.getTime() - 24 * 60 * 60 * 1000)),
+        this.getCurrentMonthFirst(new Date(date.getTime() - 2 * 24 * 60 * 60 * 1000)),
+        this.getCurrentMonthFirst(new Date(date.getTime() - 3 * 24 * 60 * 60 * 1000)),
+        this.getCurrentMonthFirst(new Date(date.getTime() - 4 * 24 * 60 * 60 * 1000))
+      ]
+    })
+  },
+
+  // 跳转
+  gotoExamination(e){
+    console.log(e)
+    wx.navigateTo({
+      url: '/teacher/examination/examination?date=' + e.target.dataset.date + '&categroyId=' + this.data.categroyId,
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.dateShow()
+
     db.collection('exam_categroy').get().then(res => {
       // res.data 包含该记录的数据
-      console.log(res.data)
+      // console.log(res.data)
       let _data = res.data
       let _categroyArray = [[]]
       for (let i = 0; i < _data.length; i++) {
-        _categroyArray[0].push(_data[i].name)
+        _categroyArray[0].push({ name: _data[i].name, id: _data[i].id})
         let _childs = _data[i].childs
         let _tempArray = []
         for (let j = 0; j < _childs.length; j++) {
-          _tempArray.push(_childs[j].name)
+          _tempArray.push({ name: _childs[j].name, id: _childs[j].id })
         }
         _categroyArray[i + 1] = _tempArray
       }
-      // console.log(_categroyArray)
 
       this.setData({ 
         categroyArray: _categroyArray,
-        multiArray: [_categroyArray[this.data.multiIndex[1]], _categroyArray[this.data.multiIndex[0]+1]]
+        multiArray: [_categroyArray[this.data.multiIndex[1]], _categroyArray[this.data.multiIndex[0]+1]],
+        categroyId: _categroyArray[this.data.multiIndex[0] + 1][this.data.multiIndex[1]].id
        })
+
+      // console.log(this.data.categroyId)
     })
   },
 

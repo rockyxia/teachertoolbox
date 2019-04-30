@@ -124,3 +124,22 @@ page {
   background-color: #E68362;
   color: #fff;
 }
+.exam-item-answer {
+  border-top: 10px solid #EEEEEE;
+  padding: 10px;
+  line-height: 25px;
+}
+
+.exam-item-answer .answer {}
+.exam-item-answer .answer text {
+  color: #84E7A6;
+}
+.exam-item-answer .hd {
+  padding: 15px 0 5px;
+  font-weight: bold;
+}
+.exam-item-answer .testcenter {
+  background: #FBD753;
+  border-radius: 15px;
+  padding: 3px 5px;
+}

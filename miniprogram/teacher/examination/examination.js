@@ -1,23 +1,16 @@
 // teacher/examination/examination.js
+const db = wx.cloud.database()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640',
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640',
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
+    testArray: null,
     indicatorDots: false,
-    autoplay: false
+    autoplay: false,
+    currentSwiper: 0
   },
   changeIndicatorDots(e) {
     this.setData({
@@ -40,11 +33,113 @@ Page({
     })
   },
 
+  // 开发中提示
+  developmenting(){
+    wx.showToast({
+      title: '功能开发中',
+      icon: 'none',
+      duration: 2000
+    })
+  },
+
+  // 查看答案
+  checkAnswer() {
+    // console.log(this.data.currentSwiper)
+    this.editTestArrayAnswer(this.data.currentSwiper, true)
+  },
+  // 隐藏答案
+  hideAnswer(){
+    this.editTestArrayAnswer(this.data.currentSwiper, false)
+  },
+
+  // 获取当前页
+  getCurrentSwiper(event) {
+    // console.log(event)
+    this.setData({
+      currentSwiper: event.detail.current
+    })
+  },
+
+  // 点击选项
+  operateOption(event) {
+    // console.log(this.data.currentSwiper, event.currentTarget.dataset.value, event.currentTarget.dataset.type)
+    // 修改数据
+    this.editTestArray(this.data.currentSwiper, event.currentTarget.dataset.value, event.currentTarget.dataset.type)
+  },
+  // 修改数据源1
+  editTestArray(test, option, type) {
+    let _testArray = this.data.testArray
+    for (let i = 0; i < _testArray.length; i++) {
+      if (i == test){
+        let _options = _testArray[i].options
+        for (let k = 0; k < _options.length; k++) {
+          if (type == "1"){
+            // 单选
+            _options[k].selected = false
+          }
+          if (_options[k].name == option) {
+            _options[k].selected = !_options[k].selected
+          }
+        }
+      }
+    }
+    this.setData({
+      testArray: _testArray
+    })
+  },
+  // 修改数据源2
+  editTestArrayAnswer(test, answer) {
+    let _testArray = this.data.testArray
+    for (let i = 0; i < _testArray.length; i++) {
+      if (i == test) {
+        _testArray[i].showAnswer = answer
+      }
+    }
+    this.setData({
+      testArray: _testArray
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: options.date
+    })
+    console.log(options.categroyId)
+    db.collection('test-list').where({
+      categroyid: options.categroyId
+    }).get().then(res => {
+      // console.log(res.data)
+      Array.prototype.random = function () {
+        var idx = Math.floor((Math.random() * this.length));
+        var n = this.splice(idx, 1)[0];
+        return n;
+      }
+      var i = 0;
+      var a = [];
+      while (i++ < 10) {
+        a.push(res.data.random())
+      }
 
+      for (let j = 0; j < a.length; j++) {
+        // _categroyArray[0].push({ name: _data[i].name, id: _data[i].id })
+        let _childs = a[j].options
+        a[j].showAnswer = false
+        // let _tempArray = []
+        for (let k = 0; k < _childs.length; k++) {
+          // _tempArray.push({ name: _childs[j].name, id: _childs[j].id })
+          _childs[k].selected = false
+        }
+        // _categroyArray[i + 1] = _tempArray
+      }
+
+      console.log(a);
+      this.setData({
+        testArray: a
+      })
+    })
   },
 
   /**
