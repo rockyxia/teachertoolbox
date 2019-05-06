@@ -10,7 +10,8 @@ Page({
     testArray: null,
     indicatorDots: false,
     autoplay: false,
-    currentSwiper: 0
+    currentSwiper: 0,
+    totalNum: 10
   },
   changeIndicatorDots(e) {
     this.setData({
@@ -119,7 +120,7 @@ Page({
       }
       var i = 0;
       var a = [];
-      while (i++ < 10) {
+      while (i++ < this.data.totalNum) {
         a.push(res.data.random())
       }
 

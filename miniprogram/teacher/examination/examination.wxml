@@ -15,7 +15,7 @@
                 </view>
                 <view class='num'>
                   <text class='current'>{{idx+1}}</text>
-                  <text> / 5</text>
+                  <text> / {{totalNum}}</text>
                 </view>
               </view>
               <view class='exam-item-title'>{{test.title}}</view>
