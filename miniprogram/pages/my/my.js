@@ -18,25 +18,25 @@ Page({
     nocancel: true,
     recommendArray: [
       {
-        faceUrl: './hfface.jpg',
+        faceUrl: './hfjsdk.jpg',
         name: '合肥教师代课',
         enname: 'hfjsdk',
         intro: '合肥教师代课招聘信息及时发布，教师招考咨询、辅导，为合肥教师点赞。',
-        ewmUrl: 'https://7465-teacher-668d49-1258227407.tcb.qcloud.la/hfewm.jpg?sign=72f47b06f2b8c650ba1453dea2d01b81&t=1544184992'
+        ewmUrl: 'https://7465-teacher-668d49-1258227407.tcb.qcloud.la/hfjsdk2020.jpg?sign=52ae988f2f7efd78fdc48515606d09bd&t=1590030483'
       },
       {
-        faceUrl: './jsface.jpg',
+        faceUrl: './jskbzy.jpg',
         name: '教师考编资源',
         enname: 'jskbzy',
         intro: '教师考编资源大全，教师考编资源正在陆续发布中。',
-        ewmUrl: 'https://7465-teacher-668d49-1258227407.tcb.qcloud.la/jsewm.jpg?sign=ea9be31c5cbe5f832a486fa2fc0f677c&t=1544185012'
+        ewmUrl: 'https://7465-teacher-668d49-1258227407.tcb.qcloud.la/jskbzy2020.jpg?sign=a90fde092500972d75a01cbce762c9aa&t=1590030506'
       },
       {
-        faceUrl: './laface.jpg',
-        name: '六安教师代课',
-        enname: 'lajsdk',
-        intro: '六安教师代课招聘信息及时发布，教师招考咨询、辅导，为六安教师点赞。',
-        ewmUrl: 'https://7465-teacher-668d49-1258227407.tcb.qcloud.la/laewm.jpg?sign=420762b84e3d992dc5a1f5626ac8fe9c&t=1544185026'
+        faceUrl: './ahjszpxx.jpg',
+        name: '皖徽教师招聘',
+        enname: 'ahjszpxx',
+        intro: '安徽教师招考信息，教师考编考试公告，面试公告等信息发布。',
+        ewmUrl: 'https://7465-teacher-668d49-1258227407.tcb.qcloud.la/ahjszpxx2020.jpg?sign=c4789544884f0f0a69ba4d7d5996096c&t=1590030467'
       }
     ]
   },

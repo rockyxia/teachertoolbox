@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/home/home",
     "teacher/practice/practice",
     "teacher/examination/examination",
-    "pages/home/home",
     "pages/my/my",
     "pages/phoneNumber/phoneNumber",
     "pages/rmbCapital/rmbCapital",
